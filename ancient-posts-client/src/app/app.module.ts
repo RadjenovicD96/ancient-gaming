@@ -9,6 +9,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { PaginatorComponent } from './common/paginator/paginator.component';
 import { FormsModule } from '@angular/forms';
+import { PostCardComponent } from './posts/post-card/post-card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     PostsComponent,
     PageNotFoundComponent,
     PaginatorComponent,
+    PostCardComponent,
   ],
   imports: [
     BrowserModule,

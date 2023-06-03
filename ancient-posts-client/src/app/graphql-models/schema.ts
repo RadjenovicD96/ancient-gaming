@@ -19,12 +19,16 @@ export interface PageQueryOptions {
   };
 }
 
-export interface CreatePostInput {
+export interface CreatePostInputVariables {
   title: string;
   body: string;
 }
 
-export interface UpdatePostInput {
+export interface DeletePostInputVariables {
+  id: string;
+}
+
+export interface UpdatePostInputVariables {
   title: string;
   body: string;
 }

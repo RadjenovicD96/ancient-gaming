@@ -1,0 +1,13 @@
+<div style="background-color: rgb(050, 47, 47) !important; color: white">
+  <h4 class="media-heading" style="display: inline-block">
+    Title:
+    <br />
+    {{ post.title }}
+    <br />
+    <br />
+    Text:
+    <br />
+    {{ post.body }}
+  </h4>
+  <button class="btn btn-danger" (click)="deletePost(post.id)">Delete</button>
+</div>
