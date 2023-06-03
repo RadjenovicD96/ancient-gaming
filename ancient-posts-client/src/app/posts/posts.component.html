@@ -1,8 +1,28 @@
-<div *ngIf="posts$ | async as posts">
+<div *ngIf="posts$ | async as posts" style="margin-left: 1rem">
+  <div class="form-outline" style="margin-bottom: 5rem">
+    <label class="form-label" for="searchQuery">Search...</label>
+    <input
+      id="searchQuery"
+      name="searchQuery"
+      type="text"
+      class="form-control"
+      [(ngModel)]="searchQuery"
+    />
+    <button style="margin-top: 1rem" class="btn btn-primary" (click)="search()">
+      Search
+    </button>
+    <button
+      style="margin-top: 1rem; margin-left: 1rem"
+      class="btn btn-primary"
+      (click)="clear()"
+    >
+      Clear
+    </button>
+  </div>
   <div
     class="panel panel-default"
     *ngFor="let post of posts"
-    style="border-style: solid; margin-bottom: 50px"
+    style="border-style: solid; margin-bottom: 5rem"
   >
     <div style="background-color: rgb(050, 47, 47) !important; color: white">
       <h4 class="media-heading" style="display: inline-block">
@@ -20,6 +40,7 @@
 </div>
 
 <app-paginator
+  style="border-style: solid; margin-bottom: 5rem"
   [totalPages]="totalPages"
   [currentPage]="currentPage"
   (pageChange)="onPageChange($event)"

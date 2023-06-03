@@ -12,6 +12,7 @@ export class PostsComponent {
   posts$: Observable<Post[]>;
   resultsPerPage = 5;
   currentPage = 0;
+  searchQuery = '';
   totalPages = 100;
 
   constructor(private postsService: PostsService) {
@@ -20,11 +21,24 @@ export class PostsComponent {
     });
   }
 
-  onPageChange(page: number) {
-    this.currentPage = page;
-
+  getPosts() {
     this.posts$ = this.postsService.getAllPosts({
       paginate: { page: this.currentPage, limit: this.resultsPerPage },
+      search: { q: this.searchQuery },
     });
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.getPosts();
+  }
+
+  search() {
+    this.getPosts();
+  }
+
+  clear() {
+    this.searchQuery = '';
+    this.getPosts();
   }
 }

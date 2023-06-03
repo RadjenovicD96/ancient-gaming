@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { PaginatorComponent } from './common/paginator/paginator.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,13 @@ import { PaginatorComponent } from './common/paginator/paginator.component';
     PageNotFoundComponent,
     PaginatorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, GraphQLModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GraphQLModule,
+    HttpClientModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
