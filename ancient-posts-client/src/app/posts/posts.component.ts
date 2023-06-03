@@ -10,10 +10,19 @@ import { Observable } from 'rxjs';
 })
 export class PostsComponent {
   posts$: Observable<Post[]>;
-  currentPage = 1;
   resultsPerPage = 5;
+  currentPage = 0;
+  totalPages = 100;
 
   constructor(private postsService: PostsService) {
+    this.posts$ = this.postsService.getAllPosts({
+      paginate: { page: this.currentPage, limit: this.resultsPerPage },
+    });
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
+
     this.posts$ = this.postsService.getAllPosts({
       paginate: { page: this.currentPage, limit: this.resultsPerPage },
     });

@@ -5,6 +5,7 @@ export const ALL_POSTS_QUERY = gql`
     posts(options: $options) {
       data {
         id
+        body
         title
       }
       meta {
