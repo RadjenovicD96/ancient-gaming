@@ -1,0 +1,15 @@
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginator-btn {
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+
+.paginator-pages {
+  margin: 0 10px;
+}
